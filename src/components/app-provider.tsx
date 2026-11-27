@@ -20,18 +20,19 @@ const AppContext = createContext<AppState | null>(null);
 const STORAGE_KEY = "ep-lang";
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+  // PT é o padrão: é o que o Google indexa e o que aparece no HTML inicial.
+  const [lang, setLangState] = useState<Lang>("pt");
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
 
-  // Restore saved language (or follow the browser on first visit)
+  // Restore saved language (or switch to EN for non-Portuguese browsers on first visit)
   useEffect(() => {
-    let initial: Lang = "en";
+    let initial: Lang = "pt";
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved === "pt" || saved === "en") initial = saved;
-      else if (navigator.language?.toLowerCase().startsWith("pt")) initial = "pt";
+      else if (navigator.language && !navigator.language.toLowerCase().startsWith("pt")) initial = "en";
     } catch {}
     // eslint-disable-next-line react-hooks/set-state-in-effect -- hydrate from storage once
     setLangState(initial);
