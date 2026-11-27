@@ -9,7 +9,7 @@ export const siteConfig = {
   name: "Erick de Paula",
   shortName: "EP",
   role: "Software Developer",
-  url: "https://erickdepaula.com.br",
+  url: "https://www.erickdepaula.com.br",
 
   /** Caminho do avatar (memoji/3D, PNG com fundo transparente) dentro de /public.
    *  Deixe `null` para usar o placeholder animado. Ex.: "/avatar.png" */
