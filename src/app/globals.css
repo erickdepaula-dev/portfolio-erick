@@ -132,3 +132,13 @@ body {
   .reveal { opacity: 1; transform: none; }
   .hero-rise > * { opacity: 1; }
 }
+
+/* Tailwind 4 deixa botões com cursor padrão — devolve a "mãozinha" */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  select,
+  label[for] {
+    cursor: pointer;
+  }
+}
