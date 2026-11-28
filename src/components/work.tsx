@@ -10,15 +10,15 @@ function Art({ kind }: { kind: ProjectArt }) {
   if (kind === "finance") {
     const bars = [38, 62, 45, 80, 56, 92, 70];
     return (
-      <div className="flex h-full flex-col justify-between p-6">
+      <div className="flex h-full flex-col justify-between gap-2 p-4">
         <div className="flex items-start justify-between">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-widest text-dim">Balance</p>
-            <p className="font-display text-3xl font-extrabold">R$ 12.480<span className="text-dim">,00</span></p>
+            <p className="font-display text-2xl font-extrabold">R$ 12.480<span className="text-dim">,00</span></p>
           </div>
           <span className="rounded-full bg-lime-soft px-2.5 py-1 font-mono text-[11px] text-lime">+18.4%</span>
         </div>
-        <div className="flex h-28 items-end gap-2">
+        <div className="flex flex-1 items-end gap-2">
           {bars.map((h, i) => (
             <div
               key={i}
@@ -36,15 +36,15 @@ function Art({ kind }: { kind: ProjectArt }) {
   if (kind === "shopping") {
     const items = [
       { n: "Arroz 5kg", p: "27,90", done: true },
-      { n: "Café 500g", p: "18,49", done: true },
+      
       { n: "Azeite", p: "34,90", done: false },
-      { n: "Frutas", p: "22,00", done: false },
+      
     ];
     return (
-      <div className="flex h-full flex-col justify-between p-6">
-        <div className="space-y-2">
+      <div className="flex h-full flex-col justify-between gap-2 p-4">
+        <div className="space-y-1.5">
           {items.map((it) => (
-            <div key={it.n} className="flex items-center gap-3 rounded-xl border border-line bg-black/30 px-3 py-2.5 text-sm">
+            <div key={it.n} className="flex items-center gap-3 rounded-lg border border-line bg-black/30 px-3 py-1.5 text-sm">
               <span
                 className={`grid h-4 w-4 place-items-center rounded-[5px] border ${
                   it.done ? "border-lime bg-lime text-bg" : "border-line-strong"
@@ -57,7 +57,7 @@ function Art({ kind }: { kind: ProjectArt }) {
             </div>
           ))}
         </div>
-        <div className="mt-4">
+        <div>
           <div className="mb-1.5 flex justify-between font-mono text-[11px] text-muted">
             <span>R$ 103,29</span>
             <span>/ R$ 150,00</span>
@@ -71,12 +71,12 @@ function Art({ kind }: { kind: ProjectArt }) {
   }
   if (kind === "board") {
     const cols = [
-      { t: "To do", c: 3 },
+      { t: "To do", c: 1 },
       { t: "Doing", c: 2 },
-      { t: "Done", c: 3 },
+      { t: "Done", c: 1 },
     ];
     return (
-      <div className="grid h-full grid-cols-3 gap-2.5 p-6">
+      <div className="grid h-full grid-cols-3 gap-2 p-4">
         {cols.map((col, ci) => (
           <div key={col.t} className="flex flex-col gap-2 rounded-xl bg-black/30 p-2">
             <p className="px-1 font-mono text-[10px] uppercase tracking-widest text-dim">{col.t}</p>
@@ -120,24 +120,23 @@ function ProjectCard({ p, index }: { p: Project; index: number }) {
           soon ? "border-dashed border-line-strong" : "border-line hover:-translate-y-1 hover:border-lime/40"
         }`}
       >
-        <div className="relative h-64 overflow-hidden border-b border-line bg-[radial-gradient(circle_at_70%_0%,rgba(198,255,61,.08),transparent_60%)]">
+        {!soon && (<div className="relative h-36 overflow-hidden border-b border-line bg-[radial-gradient(circle_at_70%_0%,rgba(198,255,61,.08),transparent_60%)]">
           <Art kind={p.art} />
-          <span className="absolute right-5 top-5 font-mono text-xs text-dim">0{index + 1}</span>
-        </div>
+        </div>)}
 
-        <div className="flex flex-1 flex-col p-7">
-          <div className="mb-3 flex items-center gap-2">
+        <div className="flex flex-1 flex-col p-5">
+          <div className="mb-2 flex items-center gap-2">
             <span className={`h-1.5 w-1.5 rounded-full ${soon ? "bg-dim" : "bg-lime"}`} />
             <span className="font-mono text-[11px] uppercase tracking-widest text-muted">{t.work.status[p.status]}</span>
           </div>
-          <h3 className="font-display text-3xl font-extrabold tracking-tight">{soon ? t.work.status.soon + " ✦" : p.name}</h3>
-          <p className="mt-2 font-medium text-fg/90">{copy.tagline}</p>
-          <p className="mt-3 text-sm leading-relaxed text-muted">{copy.desc}</p>
+          <h3 className="font-display text-2xl font-extrabold tracking-tight">{soon ? t.work.status.soon + " ✦" : p.name}</h3>
+          <p className="mt-1 text-sm font-medium text-fg/90">{copy.tagline}</p>
+          <p className="mt-2 text-sm leading-relaxed text-muted">{copy.desc}</p>
 
           {p.stack.length > 0 && (
-            <ul className="mt-5 flex flex-wrap gap-1.5">
+            <ul className="mt-3 flex flex-wrap gap-1.5">
               {p.stack.map((s) => (
-                <li key={s} className="rounded-full border border-line px-2.5 py-1 font-mono text-[11px] text-muted">
+                <li key={s} className="rounded-full border border-line px-2 py-0.5 font-mono text-[10px] text-muted">
                   {s}
                 </li>
               ))}
@@ -145,7 +144,7 @@ function ProjectCard({ p, index }: { p: Project; index: number }) {
           )}
 
           {!soon && (
-            <div className="mt-auto flex flex-wrap gap-2 pt-7">
+            <div className="mt-auto flex flex-wrap gap-2 pt-4">
               {p.live && (
                 <a
                   href={p.live}
@@ -169,6 +168,7 @@ function ProjectCard({ p, index }: { p: Project; index: number }) {
             </div>
           )}
         </div>
+        <span className="absolute bottom-5 right-6 font-mono text-xs text-dim">0{index + 1}</span>
       </div>
     </Reveal>
   );
@@ -177,9 +177,9 @@ function ProjectCard({ p, index }: { p: Project; index: number }) {
 export function Work() {
   const { t } = useApp();
   return (
-    <section id="work" className="relative mx-auto max-w-6xl -scroll-mt-16 px-4 py-24 sm:px-6 md:-scroll-mt-24 md:py-32">
+    <section id="work" className="relative mx-auto max-w-6xl -scroll-mt-16 px-4 py-24 sm:px-6 md:-scroll-mt-24 md:py-24">
       <SectionHeading kicker={t.work.kicker} title={t.work.title} accent={t.work.titleAccent} />
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2">
         {projects.map((p, i) => (
           <ProjectCard key={p.id} p={p} index={i} />
         ))}
