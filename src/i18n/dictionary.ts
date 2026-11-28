@@ -1,11 +1,19 @@
 export type Lang = "en" | "pt";
 
 const en = {
-  nav: { home: "Home", about: "About", work: "Work", contact: "Contact", resume: "Resume", resumeSoon: "Resume coming soon" },
+  nav: {
+    home: "Home",
+    about: "About",
+    work: "Work",
+    contact: "Contact",
+    resume: "Resume",
+    resumeSoon: "Resume coming soon",
+  },
   hero: {
     hello: "Hi, I'm",
     role: "Software Developer",
-    tagline: "I build real products from the first doc to the last deploy — typed, secure and made to last.",
+    tagline:
+      "I build real products from the first doc to the last deploy — typed, secure and made to last.",
     cta: "Get in touch",
     more: "Learn more",
     available: "Open to jobs & freelance projects",
@@ -34,7 +42,10 @@ const en = {
     ],
     processTitle: "How I work",
     process: [
-      { t: "Document", d: "PRD, data modeling, architecture and technical decisions." },
+      {
+        t: "Document",
+        d: "PRD, data modeling, architecture and technical decisions.",
+      },
       { t: "Architect", d: "Layer separation, structure and planning." },
       { t: "Protect", d: "RLS, tenant isolation and security best practices." },
       { t: "Build", d: "Clean, typed and testable code, guided by the docs." },
@@ -47,7 +58,12 @@ const en = {
     titleAccent: "and use every day.",
     live: "Live site",
     code: "Code",
-    status: { production: "In production", live: "Live", daily: "Daily use", soon: "Coming soon" },
+    status: {
+      production: "In production",
+      live: "Live",
+      daily: "Daily use",
+      soon: "Coming soon",
+    },
     projects: {
       finance: {
         tagline: "Real financial control, battle-tested daily.",
@@ -78,7 +94,11 @@ const en = {
     send: "Send via WhatsApp",
     greeting: "Hi Erick! I came from your portfolio.",
     labels: { name: "Name", phone: "Phone", message: "Message" },
-    errors: { name: "Tell me your name", phone: "Enter a valid phone", message: "Write a short message" },
+    errors: {
+      name: "Tell me your name",
+      phone: "Enter a valid phone",
+      message: "Write a short message",
+    },
     or: "or reach me directly",
     copied: "Email copied!",
   },
@@ -102,14 +122,22 @@ const en = {
 export type Dict = typeof en;
 
 const pt: Dict = {
-  nav: { home: "Início", about: "Sobre", work: "Projetos", contact: "Contato", resume: "Currículo", resumeSoon: "Currículo em breve" },
+  nav: {
+    home: "Início",
+    about: "Sobre",
+    work: "Projetos",
+    contact: "Contato",
+    resume: "Currículo",
+    resumeSoon: "Currículo em breve",
+  },
   hero: {
     hello: "Olá, eu sou",
     role: "Software Developer",
-    tagline: "Construo produtos reais do primeiro documento ao último deploy — tipados, seguros e feitos para durar.",
+    tagline:
+      "Construo produtos reais do primeiro documento ao último deploy — tipados, seguros e feitos para durar.",
     cta: "Fale comigo",
     more: "Saiba mais",
-    available: "Disponível para vagas e projetos freelance",
+    available: "Disponível para projetos freelance",
     hint: "Pressione",
     hintAfter: "para explorar",
   },
@@ -135,11 +163,26 @@ const pt: Dict = {
     ],
     processTitle: "Como eu trabalho",
     process: [
-      { t: "Documentar", d: "PRD, modelagem de dados, arquitetura e decisões técnicas." },
-      { t: "Arquitetar", d: "Separação de camadas, organização e planejamento." },
-      { t: "Proteger", d: "RLS, isolamento por tenant e boas práticas de segurança." },
-      { t: "Implementar", d: "Código limpo, tipado e testável, guiado pela documentação." },
-      { t: "Entregar", d: "Deploy, acompanhamento e evolução com base no uso real." },
+      {
+        t: "Documentar",
+        d: "PRD, modelagem de dados, arquitetura e decisões técnicas.",
+      },
+      {
+        t: "Arquitetar",
+        d: "Separação de camadas, organização e planejamento.",
+      },
+      {
+        t: "Proteger",
+        d: "RLS, isolamento por tenant e boas práticas de segurança.",
+      },
+      {
+        t: "Implementar",
+        d: "Código limpo, tipado e testável, guiado pela documentação.",
+      },
+      {
+        t: "Entregar",
+        d: "Deploy, acompanhamento e evolução com base no uso real.",
+      },
     ],
   },
   work: {
@@ -148,7 +191,12 @@ const pt: Dict = {
     titleAccent: "e uso todos os dias.",
     live: "Ver online",
     code: "Código",
-    status: { production: "Em produção", live: "No ar", daily: "Uso diário", soon: "Em breve" },
+    status: {
+      production: "Em produção",
+      live: "No ar",
+      daily: "Uso diário",
+      soon: "Em breve",
+    },
     projects: {
       finance: {
         tagline: "Controle financeiro de verdade, testado no dia a dia.",
@@ -179,11 +227,18 @@ const pt: Dict = {
     send: "Enviar pelo WhatsApp",
     greeting: "Olá Erick! Vim pelo seu portfólio.",
     labels: { name: "Nome", phone: "Telefone", message: "Mensagem" },
-    errors: { name: "Diga seu nome", phone: "Informe um telefone válido", message: "Escreva uma mensagem curta" },
+    errors: {
+      name: "Diga seu nome",
+      phone: "Informe um telefone válido",
+      message: "Escreva uma mensagem curta",
+    },
     or: "ou fale direto comigo",
     copied: "E-mail copiado!",
   },
-  footer: { made: "Desenhado e desenvolvido por", rights: "Todos os direitos reservados." },
+  footer: {
+    made: "Desenhado e desenvolvido por",
+    rights: "Todos os direitos reservados.",
+  },
   palette: {
     placeholder: "Digite um comando ou busque…",
     empty: "Nada encontrado.",

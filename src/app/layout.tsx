@@ -22,7 +22,7 @@ const mono = JetBrains_Mono({
 
 const title = `${siteConfig.name} | Desenvolvedor de Software Full Stack`;
 const description =
-  "Portfólio de Erick de Paula, desenvolvedor de software full stack em João Pessoa/PB. Aplicações web com React, Next.js, TypeScript, Node.js, PostgreSQL e Supabase — do levantamento de requisitos ao deploy. Disponível para vagas e projetos freelance.";
+  "Portfólio de Erick de Paula, desenvolvedor de software full stack em João Pessoa/PB. Aplicações web com React, Next.js, TypeScript, Node.js, PostgreSQL e Supabase — do levantamento de requisitos ao deploy. Disponível para projetos freelance.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -89,7 +89,7 @@ const jsonLd = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" className={`${display.variable} ${body.variable} ${mono.variable} antialiased`}>
       <body className="grain min-h-screen font-sans">
